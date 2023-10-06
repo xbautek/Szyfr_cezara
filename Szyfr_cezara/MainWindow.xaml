@@ -1,0 +1,54 @@
+﻿<Window x:Class="Szyfr_cezara.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szyfr_cezara"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="do_szyfru"  HorizontalAlignment="Left" Margin="80,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
+        <Label Content="Wprowadź tekst do zaszyfrowania" HorizontalAlignment="Left" Margin="80,107,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="kluczyk" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="13"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="15"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="17"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="19"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="21"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="23"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="25"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="27"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="29"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="31"/>
+            <ComboBoxItem Content="32"/>
+            <ComboBoxItem Content="33"/>
+            <ComboBoxItem Content="34"/>
+
+        </ComboBox>
+        <TextBox x:Name="zaszyfrowane" HorizontalAlignment="Left" Margin="533,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
+        <Button Content="SZYFRUJ" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Height="45" Width="96" Click="Button_Click"/>
+        <Label Content="Zaszyfrowany tekst" HorizontalAlignment="Left" Margin="533,102,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
