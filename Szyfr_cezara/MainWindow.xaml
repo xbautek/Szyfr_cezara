@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szyfr_cezara"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Szyfr cezara" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="do_szyfru"  HorizontalAlignment="Left" Margin="80,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
-        <Label Content="Wprowadź tekst do zaszyfrowania" HorizontalAlignment="Left" Margin="80,107,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="kluczyk" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top" Width="120">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="742*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="do_szyfru"  HorizontalAlignment="Left" Margin="22,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="2" />
+        <Label Content="Wprowadź tekst do zaszyfrowania" HorizontalAlignment="Left" Margin="22,107,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <ComboBox x:Name="kluczyk" HorizontalAlignment="Left" Margin="282,72,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
@@ -45,17 +50,17 @@
             <ComboBoxItem Content="33"/>
             <ComboBoxItem Content="34"/>
         </ComboBox>
-        <TextBox x:Name="zaszyfrowane" HorizontalAlignment="Left" Margin="533,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
-        <Button Content="SZYFRUJ" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Height="45" Width="96" Click="Szyfruj_Click"/>
-        <Label HorizontalContentAlignment="Center" Content="Zaszyfrowany tekst" HorizontalAlignment="Left" Margin="533,102,0,0" VerticalAlignment="Top" Width="190"/>
+        <TextBox x:Name="zaszyfrowane" HorizontalAlignment="Left" Margin="476,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="2" />
+        <Button Content="SZYFRUJ" HorizontalAlignment="Left" Margin="294,115,0,0" VerticalAlignment="Top" Height="45" Width="96" Click="Szyfruj_Click" Grid.Column="2"/>
+        <Label HorizontalContentAlignment="Center" Content="Zaszyfrowany tekst" HorizontalAlignment="Left" Margin="476,102,0,0" VerticalAlignment="Top" Width="190" Grid.Column="2"/>
 
 
 
-        <TextBox x:Name="do_odszyfru"  HorizontalAlignment="Left" Margin="80,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
-        <Label Content="Wprowadź tekst do odszyfrowania" HorizontalAlignment="Left" Margin="80,293,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="odszyfrowane" HorizontalAlignment="Left" Margin="533,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" />
-        <Label HorizontalContentAlignment="Center" Content="Odszyfrowany tekst" HorizontalAlignment="Left" Margin="533,293,0,0" VerticalAlignment="Top" Width="190"/>
-        <ComboBox x:Name="kluczyk_Copy" HorizontalAlignment="Center" Margin="0,277,0,0" VerticalAlignment="Top" Width="120">
+        <TextBox x:Name="do_odszyfru"  HorizontalAlignment="Left" Margin="22,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="2" />
+        <Label Content="Wprowadź tekst do odszyfrowania" HorizontalAlignment="Left" Margin="22,293,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <TextBox x:Name="odszyfrowane" HorizontalAlignment="Left" Margin="476,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Grid.Column="2" />
+        <Label HorizontalContentAlignment="Center" Content="Odszyfrowany tekst" HorizontalAlignment="Left" Margin="476,293,0,0" VerticalAlignment="Top" Width="190" Grid.Column="2"/>
+        <ComboBox x:Name="kluczyk_Copy" HorizontalAlignment="Left" Margin="282,277,0,0" VerticalAlignment="Top" Width="120" Grid.Column="2">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
@@ -91,7 +96,7 @@
             <ComboBoxItem Content="33"/>
             <ComboBoxItem Content="34"/>
         </ComboBox>
-        <Button Content="DESZYFRUJ" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="45" Width="96" Click="Deszyfruj_Click"/>
+        <Button Content="DESZYFRUJ" HorizontalAlignment="Left" Margin="294,320,0,0" VerticalAlignment="Top" Height="45" Width="96" Click="Deszyfruj_Click" Grid.Column="2"/>
 
 
 

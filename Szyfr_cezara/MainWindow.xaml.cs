@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Szyfr_cezara
 {
@@ -48,6 +49,8 @@ namespace Szyfr_cezara
 
         public string SzyfrujCezarem(string tekst, int klucz)
         {
+            string alfa = "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż";
+
             if (string.IsNullOrEmpty(tekst))
             {
                 return string.Empty;
@@ -59,16 +62,23 @@ namespace Szyfr_cezara
             {
                 if (char.IsLetter(znak))
                 {
-                    char startChar = char.IsUpper(znak) ? 'A' : 'a';
-                    zaszyfrowanyTekst.Append((char)(((znak - startChar + klucz) % 26) + startChar));
+                    for(int i = 0; i < 35; i++)
+                    {
+                        if (alfa[i] == znak)
+                        {
+                            zaszyfrowanyTekst.Append(alfa[(i+klucz)%35]);
+                        }
+                    }
                 }
                 else if (char.IsWhiteSpace(znak))
                 {
                     continue;
                 }
-                else
+                else if (!char.IsLetter(znak))
                 {
-                    zaszyfrowanyTekst.Append(znak);
+                    MessageBox.Show("Wprowadź ciąg znaków składający się tylko z liter!");
+                    do_szyfru.Text = "";
+                    break;
                 }
             }
 
@@ -77,6 +87,8 @@ namespace Szyfr_cezara
 
         public string DeszyfrujCezarem(string zaszyfrowanyTekst, int klucz)
         {
+            string alfa = "aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż";
+
             if (string.IsNullOrEmpty(zaszyfrowanyTekst))
             {
                 return string.Empty;
@@ -88,22 +100,30 @@ namespace Szyfr_cezara
             {
                 if (char.IsLetter(znak))
                 {
-                    char startChar = char.IsUpper(znak) ? 'A' : 'a';
-                    int przesuniecie = (klucz % 26); // zmieniamy znak o przeciwną wartość klucza
-                    odszyfrowanyTekst.Append((char)(((znak - startChar - przesuniecie + 26) % 26) + startChar));
+                    for (int i = 0; i < 35; i++)
+                    {
+                        if (alfa[i] == znak)
+                        {
+                            odszyfrowanyTekst.Append(alfa[(i - klucz < 0 ? 35 + i - klucz : i - klucz)]);
+                        }
+                    }
                 }
                 else if (char.IsWhiteSpace(znak))
                 {
                     continue;
                 }
-                else
+                else if(!char.IsLetter(znak))
                 {
-                    odszyfrowanyTekst.Append(znak);
+                    MessageBox.Show("Wprowadź ciąg znaków składający się tylko z liter!");
+                    do_odszyfru.Text = "";
+                    break;
                 }
             }
 
             return odszyfrowanyTekst.ToString();
         }
+
+
 
         private void Deszyfruj_Click(object sender, RoutedEventArgs e)
         {
